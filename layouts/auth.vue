@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar/>
+    <LoginNav/>
   </div>
   <div>
     <slot />
@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import Footer from '~/components/Footer.vue';
+
 </script>
 
 <style>

@@ -9,7 +9,6 @@
               <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
               <NuxtLink to="/" class="hover:underline">Contacts</NuxtLink>
               <NuxtLink to="/" class="hover:underline">Abouts</NuxtLink>
-              <NuxtLink to="/" class="hover:underline">Sign-Up</NuxtLink>
           </div>
         </nav>
     
@@ -17,6 +16,16 @@
         <UInput size="lg" v-model="search" placeholder="Search ..."/>
         <UIcon name="i-heroicons-shopping-cart" class="text-xl cursor-pointer"/>
         <UIcon name="i-heroicons-heart" class="text-xl cursor-pointer"/>
+
+        <UPopover :popper="{ arrow: true }">
+          <UAvatar icon="i-heroicons-photo" size="sm" />
+
+    <template #panel>
+      <div class="p-4">
+        <NuxtLink to="/">Create Account</NuxtLink>
+      </div>
+    </template>
+  </UPopover>
       </div>
     </div>
   </div>
