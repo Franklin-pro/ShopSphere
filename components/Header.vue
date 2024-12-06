@@ -1,23 +1,17 @@
 <template>
-    <div class="py-5">
-      <h2 class="pl-3 border-l-8 border-[#DB4444] text-[#DB4444] font-bold">{{ props.item.title }}</h2>
-      <div class="flex gap-4 pt-5 font-bold text-xl">
-        <h1>{{ props.item.desc }}</h1>
-        <h3>{{ props.item.time }}</h3>
-      </div>
+  <div class="py-8">
+    <div class="flex w-2/3 justify-center ">
+      <img src="../../../assets/images/logo/LeaziLogo.png" alt="">
     </div>
+    <p class="text-4xl text-blue-500 font-semibold">{{ props?.item.title }}</p>
+    <p class="text-md text-gray-900 font-thin mt-2 w-4/6">{{ props?.item.subtitle }}</p>
+  </div>
 </template>
 
 <script lang="ts" setup>
-interface Item {
-  title: string;
-  desc: string;
-  time:string
-}
-
-const props = defineProps<{ item: Item }>();
+const props = defineProps({
+  item: Object
+})
 </script>
 
-<style>
-
-</style>
+<style></style>

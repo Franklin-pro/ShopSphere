@@ -2,6 +2,7 @@
   <div>
     <HeroPage/>
     <Impreza/>
+    <Products/>
    <Footer/>
   </div>
 </template>

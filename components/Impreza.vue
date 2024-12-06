@@ -1,9 +1,10 @@
 <template>
-  <div class="bg-gray-500">
-    <div>
-      <Header :item="'gfdd'"/>
-    </div>
+  <div class="bg-gray-100">
+ 
     <div class="carousel-container relative overflow-hidden rounded-lg">
+      <div>
+      <Header :item="title"/>
+    </div>
     <div
       class="carousel-wrapper flex transition-transform duration-500"
       :style="{ transform: `translateX(-${activeIndex * 100}%)` }" 
@@ -16,9 +17,9 @@
       >
        
 
-<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="w-full  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#" class="w-[400px] h-[300px]">
-        <img class=" rounded-t-lg w-full object-cover object-top h-[300px]" :src="item.blogImage?.url" alt="product image" />
+        <img class=" rounded-t-lg w-full object-cover object-top-center h-[300px]" :src="item.blogImage?.url" alt="product image" />
     </a>
     <div class="px-5 pb-5">
         <a href="#">
@@ -102,9 +103,8 @@ onMounted(async () => {
 // Active index to control the current slide
 const activeIndex = ref(0);
 
-// Calculate the total number of slides based on filtered blogs
 const totalItems = computed(() => filteredBlogs.value.length);
-const itemsPerPage = 1; // Slide one card at a time
+const itemsPerPage = 1; 
 const totalPages = computed(() => Math.ceil(totalItems.value / itemsPerPage));
 
 // Move to the next slide
@@ -124,6 +124,12 @@ const prevSlide = () => {
     activeIndex.value = totalItems.value - 1; // Go to the last slide if at the beginning
   }
 };
+
+const title = ref({
+  title: "Latest Products",
+  subtitle:
+  "Get started - if you own or manage a House, an Apartment or any rental property you can use Leazi to easily and efficiently manage your property(ies) affordably."
+});
 </script>
 
 
